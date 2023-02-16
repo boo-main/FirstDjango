@@ -1,22 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseNotFound
-
-author_info = {
-    "name": "Евгений",
-    "middle": "Витальевич",
-    "surname": "Юрченко",
-    "email": "eyurchenko@specialist.ru",
-    "phone": "+7-900-100-10-20"
-}
-
-items = [
-    {"id": 1, "name": "Кроссовки abibas", "quantity": 5},
-    {"id": 2, "name": "Куртка кожаная", "quantity": 2},
-    {"id": 5, "name": "Coca-cola 1 литр", "quantity": 12},
-    {"id": 7, "name": "Картофель фри", "quantity": 0},
-    {"id": 8, "name": "Кепка", "quantity": 124},
-    {"id": 10, "name": "Стул", "quantity": 2},
-]
+from MainApp.models import Item
 
 
 def home(request):
@@ -49,15 +33,10 @@ def get_item(request, id):
             return render(request, 'item-page.html', context)
 
     return HttpResponseNotFound(f"Item with id={id} not found")
-#
-# <ol>
-#     <li>....</li>
-#     <li>....</li>
-#     <li>....</li>
-#     <li>....</li>
-#     <li>....</li>
-# </ol>
+
+
 def items_list(request):
+    items = Item.objects.all()
     context = {
         "items": items
     }
