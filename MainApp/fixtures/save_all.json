@@ -1,0 +1,22 @@
+[
+  {
+    "model": "MainApp.item",
+    "pk": 1,
+    "fields": {
+      "name": "Кроссовки",
+      "brand": "reebok",
+      "count": 10,
+      "description": "Базовое описание"
+    }
+  },
+  {
+    "model": "MainApp.item",
+    "pk": 2,
+    "fields": {
+      "name": "Кеды",
+      "brand": "adidas",
+      "count": 6,
+      "description": "Базовое описание"
+    }
+  }
+]
