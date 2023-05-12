@@ -13,6 +13,7 @@ def home(request):
 
 
 def about(request):
+    # FIXME: релизовать в виде отдельного шаблона
     result = f"""
     Имя: <b>{author_info['name']}</b><br>
     Отчество: <b>{author_info['middle']}</b><br>
